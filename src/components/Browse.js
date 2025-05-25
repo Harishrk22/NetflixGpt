@@ -4,6 +4,7 @@ const Browse = () => {
   return (
     <div>
       <Header />
+      <p>Browse</p>
     </div>
   );
 };
