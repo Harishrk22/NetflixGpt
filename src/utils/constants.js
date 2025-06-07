@@ -15,3 +15,5 @@ export const PLAY_ICON =
 
 export const INFO_ICON =
   "https://img.icons8.com/?size=100&id=50rlyzgyjENI&format=png&color=FFFFFF";
+
+export const IMG_URL = "https://image.tmdb.org/t/p/w500/";

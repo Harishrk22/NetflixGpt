@@ -6,10 +6,12 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { LOGO_URL } from "../utils/constants";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const user = useSelector((state) => state.user);
 
   const handleSignOut = () => {
     signOut(auth)
@@ -35,19 +37,21 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="absolute w-screen z-50 mx-0 mt-0 bg-gradient-to-b from-black flex justify-between">
-      <img src={LOGO_URL} alt="logo" className="w-40 z-10" />
-      <div className="flex justify-center align-middle">
-        <img
-          className="w-30 h-30 p-4"
-          src="https://occ-0-2484-3662.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABdEyUfiGKB_IE32uWZW3KcuE4Vk5kEFKQM1HrVqjN4jNv-Robrvl9ctyTBXJkMcZBfIjTnqQDRqsf7TQTr_RwCEwgwqxhME.png?r=d47"
-          alt="logoutLogo"
-        ></img>
-        <button onClick={handleSignOut} className="align-middle text-center">
-          Logout
-        </button>
+    user && (
+      <div className="absolute w-screen z-50 mx-0 mt-0 bg-gradient-to-b from-black flex justify-between">
+        <img src={LOGO_URL} alt="logo" className="w-40 z-10" />
+        <div className="flex justify-center align-middle">
+          <img
+            className="w-30 h-30 p-4"
+            src="https://occ-0-2484-3662.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABdEyUfiGKB_IE32uWZW3KcuE4Vk5kEFKQM1HrVqjN4jNv-Robrvl9ctyTBXJkMcZBfIjTnqQDRqsf7TQTr_RwCEwgwqxhME.png?r=d47"
+            alt="logoutLogo"
+          />
+          <button onClick={handleSignOut} className="align-middle text-center">
+            Logout
+          </button>
+        </div>
       </div>
-    </div>
+    )
   );
 };
 
