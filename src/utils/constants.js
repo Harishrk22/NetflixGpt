@@ -5,8 +5,7 @@ export const API_OPTIONS = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyZmY4ZTBjZjA5MzA3N2E2ZTZiNjllZDNkNWU1ZTk3MCIsIm5iZiI6MTc0ODI2MDYwOC4wNTc5OTk4LCJzdWIiOiI2ODM0NTcwMDEzYjkxYTM3Y2EyYjc2NmMiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.HES3222K4ROFk_PkJjn4CpddW__7QjITNHDTmQ_xDok",
+    Authorization: process.env.REACT_APP_TMDB_KEY,
   },
 };
 
@@ -20,3 +19,5 @@ export const IMG_URL = "https://image.tmdb.org/t/p/w400/";
 
 export const BG_IMG =
   "https://assets.nflxext.com/ffe/siteui/vlv3/50fcc930-ba3f-4cae-9257-9f920e30a998/web/IN-en-20250310-TRIFECTA-perspective_739387a0-ff14-44ed-a5af-36e5aa4d236e_large.jpg";
+
+export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;
