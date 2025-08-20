@@ -63,15 +63,21 @@ const Login = () => {
 
   return (
     <div>
-      <Header />
-      <img className="opacity-100 absolute " src={BG_IMG} alt="bg"></img>
+      <div className="z-50 relative">
+        <Header />
+      </div>
+      <img
+        className="opacity-100 fixed h-screen object-cover md:w-screen"
+        src={BG_IMG}
+        alt="bg"
+      ></img>
       <form
         onSubmit={(e) => {
           e.preventDefault();
         }}
-        className=" bg-black w-3/12 mx-auto  flex flex-col absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-6 text-white bg-opacity-80"
+        className=" bg-black w-[80%] md:w-3/12 mx-auto  mt-12 flex flex-col absolute top-1/3 md:top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-6 text-white bg-opacity-80"
       >
-        <h2 className=" font-bold text-2xl p-4">
+        <h2 className=" font-bold text-xl md:text-2xl p-2 md:p-4">
           {isSignIn ? "Sign In" : " Sign up"}
         </h2>
         {!isSignIn && (
@@ -86,18 +92,18 @@ const Login = () => {
           ref={emailRef}
           type="email"
           placeholder="Email"
-          className="p-4 m-4 bg-transparent border"
+          className="p-2 m-3 md:p-4 md:m-4 bg-transparent border"
         ></input>
         <input
           ref={passwordRef}
           type="password"
           placeholder="Password"
-          className="p-4 m-4 bg-transparent border"
+          className="p-2 m-3 md:p-4 md:m-4 bg-transparent border"
         ></input>
-        <p className="text-red-500 py-2 mx-4 text-lg">{errorMsg}</p>
+        <p className="text-red-500 py-2 mx-4 text-sm md:text-lg">{errorMsg}</p>
         <button
           onClick={handleBtnClick}
-          className="p-4 m-4 bg-[rgb(229,9,20)] rounded-lg"
+          className="p-3 m-3 md:p-4 md:m-4 bg-[rgb(229,9,20)] rounded-md md:rounded-lg"
         >
           {isSignIn ? "Sign In" : " Sign up"}
         </button>

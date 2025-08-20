@@ -46,12 +46,12 @@ const Header = () => {
     });
     //this function will be called when component unmounts.
     return () => unsubscribe();
-  }, []);
+  }, [dispatch, navigate]);
 
   return (
-    user && (
-      <div className="absolute w-screen z-50 mx-0 mt-0 bg-gradient-to-b from-black flex justify-between">
-        <img src={LOGO_URL} alt="logo" className="w-40 z-10" />
+    <div className="absolute w-screen z-50 mx-0 mt-0 bg-gradient-to-b from-black flex flex-col md:flex-row justify-between">
+      <img src={LOGO_URL} alt="logo" className="w-40 z-10 mx-auto md:mx-0 " />
+      {user && (
         <div className="flex justify-center align-middle">
           {showGPTSearch && (
             <select
@@ -78,12 +78,15 @@ const Header = () => {
             alt="logoutLogo"
           />
 
-          <button onClick={handleSignOut} className="align-middle text-center">
+          <button
+            onClick={handleSignOut}
+            className="align-middle text-center text-white"
+          >
             Logout
           </button>
         </div>
-      </div>
-    )
+      )}
+    </div>
   );
 };
 

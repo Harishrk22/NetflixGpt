@@ -8,7 +8,7 @@ const VideoTrailerBackground = ({ id }) => {
   return (
     <div className="w-screen">
       <iframe
-        className="w-full h-screen  border-none"
+        className="w-full  md:h-screen  border-none"
         src={
           "https://www.youtube.com/embed/" +
           movieKey +
